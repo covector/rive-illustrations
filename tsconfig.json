@@ -1,0 +1,8 @@
+{
+    "compilerOptions": {
+        "target": "ES2015",
+        "removeComments": true,
+        "moduleResolution": "node",
+        "lib": ["ES2015","DOM"]
+    }
+}

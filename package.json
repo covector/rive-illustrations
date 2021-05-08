@@ -1,0 +1,17 @@
+{
+  "name": "rive-illustrations",
+  "version": "1.0.0",
+  "description": "A bunch of illustrations made using Rive",
+  "author": "covector",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "rive-js": "^0.7.10"
+  },
+  "scripts": {
+    "compile": "node node_modules/typescript/bin/tsc && node npm2cdn.js"
+  },
+  "devDependencies": {
+    "typescript": "^4.2.4"
+  }
+}
