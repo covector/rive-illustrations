@@ -27,6 +27,10 @@ let mousePos = 0;
 canvas.addEventListener("mousemove", (e) => {
     mousePos = e.offsetX;
 });
+canvas.addEventListener("touchmove", (e) => {
+    const canvasOffsetX = canvas.getBoundingClientRect().left;
+    mousePos = e.touches[0].pageX - canvasOffsetX;
+});
 
 // update canvas according to mouse position
 const updateBoard = () => {
