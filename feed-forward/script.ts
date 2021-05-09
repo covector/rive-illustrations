@@ -21,7 +21,7 @@ const setTime = (time: number) => {
     }
 }
 
-// set up canvas for detecting mouse move event
+// set up canvas for detecting mousemove and touchmove event
 const canvas = document.getElementById("canvas");
 let mousePos = 0;
 canvas.addEventListener("mousemove", (e) => {
@@ -34,7 +34,7 @@ canvas.addEventListener("touchmove", (e) => {
 
 // update canvas according to mouse position
 const updateBoard = () => {
-    setTime(mousePos / canvas.clientWidth);
+    setTime(2 * mousePos / canvas.clientWidth);
     window.requestAnimationFrame(updateBoard);
 }
 window.requestAnimationFrame(updateBoard);
