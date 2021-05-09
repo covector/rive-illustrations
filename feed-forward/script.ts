@@ -21,16 +21,26 @@ const setTime = (time: number) => {
     }
 }
 
-// set up detector for mouse move event
-const detector = document.getElementById("detector");
+// set up canvas for detecting mouse move event
+const canvas = document.getElementById("canvas");
 let mousePos = 0;
-detector.addEventListener("mousemove", (e) => {
-    mousePos = e.offsetX / detector.clientWidth;
+canvas.addEventListener("mousemove", (e) => {
+    mousePos = e.offsetX;
 });
 
 // update canvas according to mouse position
 const updateBoard = () => {
-    setTime(mousePos);
+    setTime(mousePos / canvas.clientWidth);
     window.requestAnimationFrame(updateBoard);
 }
 window.requestAnimationFrame(updateBoard);
+
+// fit canvas according to aspect ratio
+const ratio = 1920 / 874;
+const container = document.getElementById("container");
+const fitCanvas = () => {
+    const fitHeight = container.clientWidth / container.clientHeight > ratio;
+    container.className = fitHeight ? "fit-height" : "fit-width";
+}
+window.onresize = fitCanvas;
+fitCanvas();

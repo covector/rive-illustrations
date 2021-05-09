@@ -1,16 +1,20 @@
 body {
     margin: 0;
     background-color: #333333;
+    height: 100vh;
 }
 
-#detector {
-    position: fixed;
-    width: 100%;
+#container {
     height: 100%;
-    z-index: 10;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
 }
 
-#canvas {
-    top: 0;
-    width: 100%;
+.fit-width {
+    flex-direction: column;
+}
+
+.fit-height {
+    flex-direction: row;
 }
